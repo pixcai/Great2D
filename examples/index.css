@@ -1,0 +1,15 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+#canvas {
+  margin: 2em;
+  border: 1px solid black;
+}

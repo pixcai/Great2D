@@ -1,0 +1,38 @@
+{
+  "name": "great2d",
+  "version": "1.0.0",
+  "description": "A 2D rigid body physics engine",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "lite-server",
+    "build": "gulp build",
+    "clean": "gulp clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixcai/Great2D.git"
+  },
+  "keywords": [
+    "2d",
+    "engine"
+  ],
+  "author": "pixcai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pixcai/Great2D/issues"
+  },
+  "homepage": "https://github.com/pixcai/Great2D#readme",
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-register": "^6.14.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "lite-server": "^2.2.2",
+    "webpack-stream": "^3.2.0"
+  }
+}
