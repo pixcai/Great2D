@@ -1,8 +1,13 @@
-const Vector = require('./Vector')
+const Vector = require('./vector')
 
 class Polygon {
   constructor(...verties) {
-    this.verties = verties
+    if (verties.length === 1 && verties[0] instanceof Polygon) {
+      this.verties = []
+      verties[0].verties.forEach(vertex => this.verties.push(new Vector(vertex)))
+    } else {
+      this.verties = verties
+    }
   }
   
   center() {

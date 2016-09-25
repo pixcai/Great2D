@@ -1,7 +1,13 @@
 class Vector {
   constructor(x, y) {
-    this.x = x
-    this.y = y
+    if (arguments.length === 1 && arguments[0] instanceof Vector) {
+      const vector = arguments[0]
+      this.x = vector.x
+      this.y = vector.y
+    } else {
+      this.x = x
+      this.y = y
+    }
   }
 
   add(vector) {
@@ -21,7 +27,9 @@ class Vector {
   }
 
   cross(vector) {
-    return this.x * vector.y - this.y * vector.x 
+    this.x *= vector.y
+    this.y *= vector.x
+    return this
   }
 
   translate(vector) {

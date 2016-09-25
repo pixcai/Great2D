@@ -6,7 +6,7 @@ const uglify = require('gulp-uglify')
 
 gulp.task('build', () => {
   gulp
-    .src('src/index.js')
+    .src('src/great2d.js')
     .pipe(webpack({
       output: {
         filename: 'great2d.js'

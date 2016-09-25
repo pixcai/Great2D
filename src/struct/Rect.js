@@ -1,13 +1,23 @@
-const Vector = require('./Vector')
+const Vector = require('./vector')
 
 class Rect {
   constructor(x, y, width, height) {
-    this.width = width
-    this.height = height
-    this.topLeft = new Vector(x, y)
-    this.topRight = new Vector(x + width, y)
-    this.bottomLeft = new Vector(x, y + height)
-    this.bottomRight = new Vector(x + width, y + height)
+    if (arguments.length === 1 && arguments[0] instanceof Rect) {
+      const rect = arguments[0]
+      this.width = rect.width
+      this.height = rect.height
+      this.topLeft = new Vector(rect.topLeft)
+      this.topRight = new Vector(rect.topRight)
+      this.bottomLeft = new Vector(rect.bottomLeft)
+      this.bottomRight = new Vector(rect.bottomRight)
+    } else {
+      this.width = width
+      this.height = height
+      this.topLeft = new Vector(x, y)
+      this.topRight = new Vector(x + width, y)
+      this.bottomLeft = new Vector(x, y + height)
+      this.bottomRight = new Vector(x + width, y + height)
+    }
   }
 
   center() {
