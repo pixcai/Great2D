@@ -21,27 +21,27 @@ class Rect {
   }
 
   center() {
-    const verties = [].concat(this.topLeft, this.topRight, this.bottomLeft, this.bottomRight)
-    return verties.reduce((vertex, next) => vertex.add(next), new Vector(0, 0)).scale(1 / 4)
+    const vertices = [].concat(this.topLeft, this.topRight, this.bottomLeft, this.bottomRight)
+    return vertices.reduce((vertex, next) => vertex.add(next), new Vector(0, 0)).scale(1 / 4)
   }
 
   translate(vector) {
-    const verties = [].concat(this.topLeft, this.topRight, this.bottomLeft, this.bottomRight)
-    verties.forEach(vertex => vertex.translate(vector))
+    const vertices = [].concat(this.topLeft, this.topRight, this.bottomLeft, this.bottomRight)
+    vertices.forEach(vertex => vertex.translate(vector))
     return this
   }
 
   rotate(angle) {
     const center = this.center()
-    const verties = [].concat(this.topLeft, this.topRight, this.bottomLeft, this.bottomRight)
-    verties.forEach(vertex => vertex.rotate(center, angle))
+    const vertices = [].concat(this.topLeft, this.topRight, this.bottomLeft, this.bottomRight)
+    vertices.forEach(vertex => vertex.rotate(center, angle))
     return this
   }
 
   scale(factor) {
     const center = this.center()
-    const verties = [].concat(this.topLeft, this.topRight, this.bottomLeft, this.bottomRight)
-    verties.forEach(vertex => vertex.subtract(center).scale(factor).add(center))
+    const vertices = [].concat(this.topLeft, this.topRight, this.bottomLeft, this.bottomRight)
+    vertices.forEach(vertex => vertex.subtract(center).scale(factor).add(center))
     this.width *= factor
     this.height *= factor
     return this
