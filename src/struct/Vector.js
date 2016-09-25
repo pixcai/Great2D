@@ -27,9 +27,7 @@ class Vector {
   }
 
   cross(vector) {
-    this.x *= vector.y
-    this.y *= vector.x
-    return this
+    return this.x * vector.y - this.y * vector.x
   }
 
   translate(vector) {
