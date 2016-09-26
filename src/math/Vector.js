@@ -1,9 +1,8 @@
 class Vector {
   constructor(x, y) {
     if (arguments.length === 1 && arguments[0] instanceof Vector) {
-      const vector = arguments[0]
-      this.x = vector.x
-      this.y = vector.y
+      this.x = arguments[0].x
+      this.y = arguments[0].y
     } else {
       this.x = x
       this.y = y
@@ -28,24 +27,6 @@ class Vector {
 
   cross(vector) {
     return this.x * vector.y - this.y * vector.x
-  }
-
-  translate(vector) {
-    return this.add(vector)
-  }
-
-  rotate(center, angle) {
-    const x = this.x - center.x
-    const y = this.y - center.y
-    this.x = center.x + x * Math.cos(angle) - y * Math.sin(angle)
-    this.y = center.y + x * Math.sin(angle) + y * Math.cos(angle)
-    return this
-  }
-
-  scale(factor) {
-    this.x *= factor
-    this.y *= factor
-    return this
   }
 }
 

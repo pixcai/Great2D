@@ -1,8 +1,8 @@
 {
-  "name": "great2d",
+  "name": "Great2D",
   "version": "1.0.0",
   "description": "A 2D rigid body physics engine",
-  "main": "src/great2d.js",
+  "main": "src/Great2D.js",
   "scripts": {
     "test": "lite-server",
     "build": "gulp build",

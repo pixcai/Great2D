@@ -6,10 +6,10 @@ const uglify = require('gulp-uglify')
 
 gulp.task('build', () => {
   gulp
-    .src('src/great2d.js')
+    .src('src/Great2D.js')
     .pipe(webpack({
       output: {
-        filename: 'great2d.js'
+        filename: 'Great2D.js'
       },
       module: {
         loaders: [{
@@ -19,11 +19,10 @@ gulp.task('build', () => {
     }))
     .pipe(gulp.dest('dist'))
     .pipe(uglify())
-    .pipe(rename({
-      extname: '.min.js'
-    }))
+    .pipe(rename('Great2D.min.js'))
     .pipe(gulp.dest('dist'))
+    .pipe(rename('index.js'))
     .pipe(gulp.dest('examples'))
 })
 
-gulp.task('clean', () => del(['dist', 'examples/great2d.min.js']))
+gulp.task('clean', () => del(['dist', 'examples/index.js']))

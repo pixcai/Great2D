@@ -3,13 +3,12 @@ const Vector = require('./vector')
 class Rect {
   constructor(x, y, width, height) {
     if (arguments.length === 1 && arguments[0] instanceof Rect) {
-      const rect = arguments[0]
-      this.width = rect.width
-      this.height = rect.height
-      this.topLeft = new Vector(rect.topLeft)
-      this.topRight = new Vector(rect.topRight)
-      this.bottomLeft = new Vector(rect.bottomLeft)
-      this.bottomRight = new Vector(rect.bottomRight)
+      this.width = arguments[0].width
+      this.height = arguments[0].height
+      this.topLeft = new Vector(arguments[0].topLeft)
+      this.topRight = new Vector(arguments[0].topRight)
+      this.bottomLeft = new Vector(arguments[0].bottomLeft)
+      this.bottomRight = new Vector(arguments[0].bottomRight)
     } else {
       this.width = width
       this.height = height
