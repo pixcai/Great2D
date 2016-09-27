@@ -1,12 +1,7 @@
 class Vector {
   constructor(x, y) {
-    if (arguments.length === 1 && arguments[0] instanceof Vector) {
-      this.x = arguments[0].x
-      this.y = arguments[0].y
-    } else {
-      this.x = x
-      this.y = y
-    }
+    this.x = x
+    this.y = y
   }
 
   add(vector) {
